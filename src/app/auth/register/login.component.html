@@ -1,0 +1,39 @@
+<main class="w-full h-screen flex gap-6 px-10 py-12">
+  <section class="flex-1 rounded-xl overflow-hidden">
+    <img class="w-full h-full object-cover" src="../../../assets/register-cover.png" />
+  </section>
+  <section class="flex-1 flex items-center justify-center">
+    <div class="grid gap-5 p-8">
+      <img class="w-full h-16 object-contain object-center" src="../../../assets/logo.png" />
+      <div class="grid gap-3">
+        <span class="text-5xl text-dark-500 font-semibold">Criar uma conta</span>
+        <span class="text-sm text-dark-300">
+          Já possui uma conta? Faça o
+          <a href="#">Login</a>
+        </span>
+      </div>
+      <form class="grid gap-4">
+        <div class="flex gap-4">
+          <app-input placeholder="Primeiro nome" />
+          <app-input placeholder="Segundo nome" />
+        </div>
+        <app-input icon="mail" placeholder="E-mail" />
+        <app-input icon="lock" placeholder="Senha" type="password" />
+      </form>
+      <span class="text-sm text-dark-300">
+        Estou de acordo com os <a href="#">Termos de serviço</a>
+      </span>
+      <app-button>Criar conta</app-button>
+      <div class="flex gap-4">
+        <app-button class="flex-1" type="outlined">
+          <i-feather name="facebook" />
+          <span>Facebook</span>
+        </app-button>
+        <app-button class="flex-1" type="outlined">
+          <i-feather name="github" />
+          <span>Github</span>
+        </app-button>
+      </div>
+    </div>
+  </section>
+</main>

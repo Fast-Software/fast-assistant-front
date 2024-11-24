@@ -1,0 +1,29 @@
+<div
+  class="w-full flex rounded-full border border-neutral bg-light transition-all overflow-hidden focus-within:border-primary"
+>
+  @if (innerLabel) {
+  <span
+    class="py-3 px-4 text-dark-300 font-medium text-sm border-r bg-slate-50"
+    >{{ innerLabel }}</span
+  >
+  } @if (icon) {
+  <i-feather class="py-3 ml-4 fill-white text-dark-300" [name]="icon" />
+  }
+  <input
+    class="w-full py-3 pl-4 text-dark-300 focus:outline-0 placeholder:text-dark-300 placeholder:font-medium"
+    [type]="type"
+    [name]="name"
+    [value]="value"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [required]="required"
+    [placeholder]="placeholder"
+    (input)="onInputChange($event)"
+  />
+</div>
+@if (errorMessage) {
+<div class="flex items-center gap-2 px-2 py-1 text-red-500">
+  <i-feather name="alert-circle" style="height: 14px; width: 14px" />
+  <span class="text-sm">{{ errorMessage }}</span>
+</div>
+}

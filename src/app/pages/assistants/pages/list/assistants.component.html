@@ -1,0 +1,93 @@
+<div class="flex-1 h-screen flex flex-col justify-between">
+  <header class="px-8 py-3.5 border-b border-slate-200 bg-slate-50">
+    <h2 class="text-2xl text-slate-800 font-semibold">Assitentes</h2>
+  </header>
+  <main class="flex-1 flex flex-col items-start px-8 py-6 gap-6">
+    <div class="flex justify-between w-full">
+      <app-input placeholder="Pesquisa" icon="search" class="flex-1 max-w-96" />
+      <app-button routerLink="/assistentes/novo">
+        <span class="text-sm font-medium">Novo Assistente</span>
+        <i-feather name="plus-circle" style="width: 20px; height: 20px" />
+      </app-button>
+    </div>
+    <div class="w-full border rounded-3xl overflow-hidden">
+      <table class="w-full">
+        <thead class="h-12 border-b border-slate-300 bg-slate-50">
+          <tr>
+            <th class="text-center">
+              <app-checkbox />
+            </th>
+            <th class="font-semibold text-slate-800 text-sm text-left">
+              Nome do assistente
+            </th>
+            <th class="font-semibold text-slate-800 text-sm text-center">
+              Memória
+            </th>
+            <th class="font-semibold text-slate-800 text-sm text-center">
+              Modelo
+            </th>
+            <th class="font-semibold text-slate-800 text-sm text-center">
+              Última modificação
+            </th>
+            <th class="font-semibold text-slate-800 text-sm text-center">
+              Ações
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (assistant of assistants; track $index) {
+          <tr class="h-14 border-b">
+            <td class="text-center">
+              <app-checkbox />
+            </td>
+            <td class="font-semibold text-slate-600 text-sm text-left">
+              {{ assistant.name }}
+            </td>
+            <td class="font-light text-slate-600 text-sm text-center">
+              500 MB
+            </td>
+            <td class="font-light text-slate-600 text-sm text-center">
+              {{ assistant.service.name }}
+            </td>
+            <td class="font-light text-slate-600 text-sm text-center">
+              2024/11/20
+            </td>
+            <td class="font-light text-slate-600 text-sm text-center">
+              <div class="flex items-center justify-center gap-3">
+                <button (click)="onEdit(assistant.id)">
+                  <i-feather name="edit" style="width: 20px; height: 20px" />
+                </button>
+                <button (click)="onDelete(assistant.id)">
+                  <i-feather name="trash-2" style="width: 20px; height: 20px" />
+                </button>
+              </div>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer
+    class="w-full flex justify-between gap-x-10 px-8 py-5 border-t border-slate-300"
+  >
+    <div class="flex-1 flex flex-col">
+      <p class="flex gap-2 text-slate-800">
+        <span class="font-semibold">Espaço utilizado:</span>
+        <span>17.2gb de 20gb</span>
+      </p>
+      <div class="flex items-center gap-3">
+        <div
+          class="flex-1 max-w-[900px] h-2 rounded-full bg-slate-100 overflow-hidden"
+        >
+          <div class="w-[80%] h-2 rounded-full bg-rose-500"></div>
+        </div>
+        <span class="text-slate-800">80%</span>
+      </div>
+    </div>
+    <app-button>
+      <span class="text-sm font-medium">Comprar mais espaço</span>
+      <i-feather name="shopping-cart" style="width: 20px; height: 20px" />
+    </app-button>
+  </footer>
+</div>

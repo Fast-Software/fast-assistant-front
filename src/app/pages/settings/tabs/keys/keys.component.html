@@ -1,0 +1,41 @@
+<section
+  class="flex items-center justify-between pb-4 border-b border-slate-200"
+>
+  <div>
+    <h3 class="text-slate-800 text-lg font-semibold">Chaves da API</h3>
+    <p class="text-slate-600 text-sm font-light">
+      Você pode cadastrar as suas API Keys
+    </p>
+  </div>
+  <app-button type="outlined">
+    <i-feather name="edit" style="width: 18px; height: 18px" />
+    <span class="text-sm font-semibold">Editar</span>
+  </app-button>
+</section>
+<section class="grid grid-cols-2 pt-8 pb-4">
+  <div>
+    <div class="flex items-center gap-3">
+      <h3 class="text-slate-800 text-lg font-semibold">API Keys</h3>
+      <i-feather
+        name="help-circle"
+        class="text-slate-600"
+        style="width: 18px; height: 18px"
+      />
+    </div>
+    <p class="text-slate-600 text-sm font-light">Adicione suas Chaves de API</p>
+  </div>
+  <div class="flex flex-col items-end gap-3">
+    @for (item of keys; track $index) {
+    <app-input
+      [innerLabel]="item.name"
+      type="password"
+      class="w-full"
+      [value]="item.key"
+    />
+    }
+    <app-button type="outlined">
+      <i-feather name="plus-circle" style="width: 18px; height: 18px" />
+      <span>Adicionar chave</span>
+    </app-button>
+  </div>
+</section>

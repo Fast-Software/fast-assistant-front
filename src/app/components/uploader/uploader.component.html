@@ -1,0 +1,29 @@
+<input type="file" hidden #file (change)="changeFile($event)" />
+
+<div
+  (click)="file.click()"
+  class="min-w-96 w-full flex flex-col items-center justify-center gap-1 px-10 py-6 border border-slate-300 border-dashed rounded-3xl"
+>
+  <div
+    class="flex items-center justify-center p-3 rounded-full bg-indigo-50 mb-3"
+  >
+    <i-feather
+      name="upload"
+      class="text-indigo-600"
+      style="width: 24px; height: 24px"
+    ></i-feather>
+  </div>
+  <!-- @if (upload) {
+  <span>{{ upload.name.slice(0, 30) }}</span>
+  } @else { -->
+  <p class="flex gap-1">
+    <a class="text-indigo-600 text-base font-semibold decoration-white">
+      Clique aqui
+    </a>
+    <span class="text-slate-600 text-base font-medium"
+      >para fazer upload ou arraste.</span
+    >
+  </p>
+  <span class="text-slate-400 text-sm">Formato suportado: PDF (1gb cada)</span>
+  <!-- } -->
+</div>

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// regular style toast
+@import "ngx-toastr/toastr";
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+a {
+  color: #4f46e5;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+
+  &:hover {
+    // color: #1fe9ed;
+  }
+}
